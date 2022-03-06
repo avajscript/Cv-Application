@@ -2,15 +2,18 @@ import React from "react";
 import styled from "styled-components";
 
 const SkillSectionElem = styled.div`
-  display: grid;
   padding: 1rem;
   gap: 0.5rem;
-  text-align: center;
+  word-wrap: break-word;
 `;
 
 export default function SkillSection(props) {
-  const skills = props.skills.map((skill) => {
-    return <p>{skill.value}</p>;
+  const skills = props.skills.map((skill, index) => {
+    return (
+      <p>
+        ({index + 1}){skill.value}
+      </p>
+    );
   });
   return <SkillSectionElem>{skills}</SkillSectionElem>;
 }
